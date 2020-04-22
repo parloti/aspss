@@ -1,0 +1,103 @@
+<mat-icon svgIcon="">home</mat-icon>
+
+<section>
+    <label>Theme:</label>
+    <mat-radio-group [(ngModel)]="theme">
+        <mat-radio-button value="primary">primary</mat-radio-button>
+        <mat-radio-button value="accent">accent</mat-radio-button>
+        <mat-radio-button value="warn">warn</mat-radio-button>
+    </mat-radio-group>
+</section>
+
+<section>
+    <label>Outline:</label>
+    <mat-checkbox [(ngModel)]="outline">Outlined
+    </mat-checkbox>
+</section>
+
+<checkbox-field [outline]="outline"
+                [theme]="theme"></checkbox-field>
+
+<checkbox-field label="LABEL"
+                [outline]="outline"
+                [theme]="theme"></checkbox-field>
+
+<checkbox-field [outline]="outline"
+                [theme]="theme">
+    <h1>CONTENT</h1>
+</checkbox-field>
+
+<mat-card>
+    <mat-card-content>
+        <h2 class="example-h2">Configuration</h2>
+        <section class="example-section">
+            <label class="example-margin">Theme:</label>
+            <mat-radio-group [(ngModel)]="theme">
+                <mat-radio-button class="example-margin"
+                                  value="primary">
+                    Primary
+                </mat-radio-button>
+                <mat-radio-button class="example-margin"
+                                  value="accent">
+                    Accent
+                </mat-radio-button>
+                <mat-radio-button class="example-margin"
+                                  value="warn">
+                    Warn
+                </mat-radio-button>
+            </mat-radio-group>
+        </section>
+
+        <section class="example-button">
+            <close-button [theme]="theme"></close-button>
+        </section>
+
+        <section class="example-section">
+            <label class="example-margin">Mode:</label>
+            <mat-radio-group [(ngModel)]="mode">
+                <mat-radio-button class="example-margin"
+                                  value="determinate">
+                    Determinate
+                </mat-radio-button>
+                <mat-radio-button class="example-margin"
+                                  value="indeterminate">
+                    Indeterminate
+                </mat-radio-button>
+            </mat-radio-group>
+        </section>
+
+        <section class="example-section"
+                 *ngIf="mode === 'determinate'">
+            <label class="example-margin">Progress:</label>
+            <mat-slider class="example-margin"
+                        [(ngModel)]="progress"></mat-slider>
+        </section>
+
+        <section class="example-section">
+            <label class="example-margin">Diameter:</label>
+            <input type="number" class="example-margin"
+                   [(ngModel)]="diameter" />
+        </section>
+
+        <section class="example-section">
+            <label class="example-margin">Stroke width:</label>
+            <input type="number"
+                   class="example-margin"
+                   [(ngModel)]="strokeWidth" />
+        </section>
+
+    </mat-card-content>
+</mat-card>
+<mat-card>
+    <mat-card-content>
+        <h2 class="example-h2">Result</h2>
+        <donut-chart class="example-margin"
+                     [mode]="mode"
+                     [diameter]="diameter"
+                     [value]="progress"
+                     [theme]="theme"
+                     [strokeWidth]="strokeWidth"></donut-chart>
+    </mat-card-content>
+</mat-card>
+
+<router-outlet></router-outlet>

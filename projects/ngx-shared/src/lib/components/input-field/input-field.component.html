@@ -1,0 +1,30 @@
+<mat-form-field class="w-100"
+                [color]="theme"
+                [appearance]="appearance">
+  <mat-label>{{ label }}</mat-label>
+
+  <input [type]="type"
+         [required]="required"
+         [placeholder]="placeholder"
+         matInput
+         [formControl]="fieldFormControl" />
+
+  <mat-icon *ngIf="prefixIcon || prefixSvgIcon"
+            class="mr-1 prefix"
+            [color]="theme"
+            matPrefix
+            [svgIcon]="prefixSvgIcon">{{prefixIcon}}</mat-icon>
+
+  <mat-icon *ngIf="suffixIcon || suffixSvgIcon"
+            class="mr-1 suffix"
+            [color]="theme"
+            matSuffix
+            [svgIcon]="suffixSvgIcon"
+            (click)="suffixClick.emit($event)">{{suffixIcon}}</mat-icon>
+
+  <mat-hint>{{ hint }}</mat-hint>
+
+  <mat-error *ngFor="let keyValueError of fieldFormControl?.errors | keyvalue">
+    {{keyValueError.key | formErrorMessage}}
+  </mat-error>
+</mat-form-field>

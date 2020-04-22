@@ -1,0 +1,14 @@
+{
+  "name": "@aspss/ngx-shared",
+  "version": "0.0.4",
+  "peerDependencies": {
+    "@angular/material": "^9.2.1",
+    "@angular/forms": "^9.1.2",
+    "@angular/common": "^9.1.1",
+    "@angular/core": "^9.1.1",
+    "tslib": "^1.10.0",
+    "@aspss/ngx-all-mat": "^0.0.1",
+    "@angular/flex-layout": "^9.0.0-beta.29",
+    "bootstrap": "^4.4.1"
+  }
+}

@@ -1,0 +1,13 @@
+<mat-checkbox [formControl]="fieldFormControl"
+              [color]="theme">
+  <div class="h-100"
+       fxLayout="row"
+       fxLayoutAlign="none center">
+    {{ label }}
+    <ng-content *ngIf="!label"></ng-content>
+  </div>
+</mat-checkbox>
+<button #colorCatcher
+        id="color-catcher"
+        mat-button
+        [color]="theme"></button>
