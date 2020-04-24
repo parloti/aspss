@@ -1,18 +1,9 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { MatButtonModule } from '@angular/material/button';
-import { MatCheckboxModule } from '@angular/material/checkbox';
-import { MatFormFieldModule } from '@angular/material/form-field';
-import { MatIconModule } from '@angular/material/icon';
-import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
-import { MatSelectModule } from '@angular/material/select';
-import { CheckboxFieldComponent } from './components/checkbox-field/checkbox-field.component';
-import { CloseButtonComponent } from './components/close-button/close-button.component';
-import { DonutChartComponent } from './components/donut-chart/donut-chart.component';
-import { InputFieldComponent } from './components/input-field/input-field.component';
-import { SelectFieldComponent } from './components/select-field/select-field.component';
 import { FlexModule } from '@angular/flex-layout';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { NgxAllMatModule } from '@aspss/ngx-all-mat';
+import { CheckboxFieldComponent, CloseButtonComponent, DonutChartComponent, InputFieldComponent, SelectFieldComponent } from './components';
 import { FormErrorMessagePipe } from './pipes/form-error-message.pipe';
 
 @NgModule({
@@ -31,12 +22,7 @@ import { FormErrorMessagePipe } from './pipes/form-error-message.pipe';
 
     FlexModule,
 
-    MatButtonModule,
-    MatCheckboxModule,
-    MatFormFieldModule,
-    MatIconModule,
-    MatProgressSpinnerModule,
-    MatSelectModule,
+    NgxAllMatModule,
   ],
   exports: [
     CheckboxFieldComponent,
@@ -47,4 +33,4 @@ import { FormErrorMessagePipe } from './pipes/form-error-message.pipe';
     FormErrorMessagePipe,
   ],
 })
-export class NgxSharedModule {}
+export class NgxSharedModule { }
