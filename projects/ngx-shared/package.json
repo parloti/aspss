@@ -1,6 +1,6 @@
 {
   "name": "@aspss/ngx-shared",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "peerDependencies": {
     "@angular/animations": "^9.1.3",
     "@angular/cdk": "^9.2.1",

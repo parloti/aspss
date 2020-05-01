@@ -1,103 +1,222 @@
-<mat-icon svgIcon="">home</mat-icon>
+<div fxLayoutGap="8px"
+     fxLayout="row wrap">
 
-<section>
-    <label>Theme:</label>
-    <mat-radio-group [(ngModel)]="theme">
-        <mat-radio-button value="primary">primary</mat-radio-button>
-        <mat-radio-button value="accent">accent</mat-radio-button>
-        <mat-radio-button value="warn">warn</mat-radio-button>
-    </mat-radio-group>
-</section>
+    <ng-container *ngIf="true">
+        <mat-card class="mt-2">
+            <mat-card-header>
+                <mat-card-title class="text-muted">CheckboxFieldComponent</mat-card-title>
+            </mat-card-header>
+            <mat-card-content fxLayout="column"
+                              fxLayoutGap="4px">
+                <section fxLayout="column"
+                         fxLayoutGap="8px">
+                    <label>Theme:</label>
+                    <mat-radio-group class="ml-5"
+                                     fxLayoutGap="4px"
+                                     fxLayout="column"
+                                     #theme="matRadioGroup">
+                        <mat-radio-button [checked]="true"
+                                          value="primary">Primary</mat-radio-button>
+                        <mat-radio-button value="accent">Accent</mat-radio-button>
+                        <mat-radio-button value="warn">Warn</mat-radio-button>
+                    </mat-radio-group>
+                </section>
 
-<section>
-    <label>Outline:</label>
-    <mat-checkbox [(ngModel)]="outline">Outlined
-    </mat-checkbox>
-</section>
+                <section>
+                    <mat-checkbox [checked]="true"
+                                  #outline>Outline</mat-checkbox>
+                </section>
 
-<checkbox-field [outline]="outline"
-                [theme]="theme"></checkbox-field>
+                <checkbox-field label="String Label"
+                                [outline]="outline.checked"
+                                [theme]="theme.value"></checkbox-field>
 
-<checkbox-field label="LABEL"
-                [outline]="outline"
-                [theme]="theme"></checkbox-field>
+                <checkbox-field [outline]="outline.checked"
+                                [theme]="theme.value">
+                    <h1>Html label</h1>
+                </checkbox-field>
 
-<checkbox-field [outline]="outline"
-                [theme]="theme">
-    <h1>CONTENT</h1>
-</checkbox-field>
+            </mat-card-content>
+        </mat-card>
+    </ng-container>
 
-<mat-card>
-    <mat-card-content>
-        <h2 class="example-h2">Configuration</h2>
-        <section class="example-section">
-            <label class="example-margin">Theme:</label>
-            <mat-radio-group [(ngModel)]="theme">
-                <mat-radio-button class="example-margin"
-                                  value="primary">
-                    Primary
-                </mat-radio-button>
-                <mat-radio-button class="example-margin"
-                                  value="accent">
-                    Accent
-                </mat-radio-button>
-                <mat-radio-button class="example-margin"
-                                  value="warn">
-                    Warn
-                </mat-radio-button>
-            </mat-radio-group>
-        </section>
+    <ng-container *ngIf="true">
+        <mat-card class="mt-2">
+            <mat-card-header>
+                <mat-card-title class="text-muted">CloseButtonComponent</mat-card-title>
+            </mat-card-header>
+            <mat-card-content fxLayout="column"
+                              fxLayoutGap="4px">
+                <section fxLayout="column"
+                         fxLayoutGap="8px">
+                    <label>Theme:</label>
+                    <mat-radio-group class="ml-5"
+                                     fxLayoutGap="4px"
+                                     fxLayout="column"
+                                     #theme="matRadioGroup">
+                        <mat-radio-button [checked]="true"
+                                          value="primary">Primary</mat-radio-button>
+                        <mat-radio-button value="accent">Accent</mat-radio-button>
+                        <mat-radio-button value="warn">Warn</mat-radio-button>
+                    </mat-radio-group>
+                </section>
 
-        <section class="example-button">
-            <close-button [theme]="theme"></close-button>
-        </section>
+                <close-button class="mr-5"
+                              [theme]="theme.value">Click</close-button>
 
-        <section class="example-section">
-            <label class="example-margin">Mode:</label>
-            <mat-radio-group [(ngModel)]="mode">
-                <mat-radio-button class="example-margin"
-                                  value="determinate">
-                    Determinate
-                </mat-radio-button>
-                <mat-radio-button class="example-margin"
-                                  value="indeterminate">
-                    Indeterminate
-                </mat-radio-button>
-            </mat-radio-group>
-        </section>
+            </mat-card-content>
+        </mat-card>
+    </ng-container>
 
-        <section class="example-section"
-                 *ngIf="mode === 'determinate'">
-            <label class="example-margin">Progress:</label>
-            <mat-slider class="example-margin"
-                        [(ngModel)]="progress"></mat-slider>
-        </section>
+    <ng-container *ngIf="true">
+        <mat-card class="mt-2">
+            <mat-card-header>
+                <mat-card-title class="text-muted">DonutChartComponent</mat-card-title>
+            </mat-card-header>
+            <mat-card-content fxLayout="row"
+                              fxLayoutGap="4px">
 
-        <section class="example-section">
-            <label class="example-margin">Diameter:</label>
-            <input type="number" class="example-margin"
-                   [(ngModel)]="diameter" />
-        </section>
+                <div fxLayout="column">
 
-        <section class="example-section">
-            <label class="example-margin">Stroke width:</label>
-            <input type="number"
-                   class="example-margin"
-                   [(ngModel)]="strokeWidth" />
-        </section>
+                    <section fxLayout="column"
+                             fxLayoutGap="8px">
+                        <label>Theme:</label>
+                        <mat-radio-group class="ml-5"
+                                         fxLayoutGap="4px"
+                                         fxLayout="column"
+                                         #theme="matRadioGroup">
+                            <mat-radio-button [checked]="true"
+                                              value="primary">Primary</mat-radio-button>
+                            <mat-radio-button value="accent">Accent</mat-radio-button>
+                            <mat-radio-button value="warn">Warn</mat-radio-button>
+                        </mat-radio-group>
+                    </section>
 
-    </mat-card-content>
-</mat-card>
-<mat-card>
-    <mat-card-content>
-        <h2 class="example-h2">Result</h2>
-        <donut-chart class="example-margin"
-                     [mode]="mode"
-                     [diameter]="diameter"
-                     [value]="progress"
-                     [theme]="theme"
-                     [strokeWidth]="strokeWidth"></donut-chart>
-    </mat-card-content>
-</mat-card>
+                    <section fxLayout="column"
+                             fxLayoutGap="8px">
+                        <label>Mode:</label>
+                        <mat-radio-group class="ml-5"
+                                         fxLayoutGap="4px"
+                                         fxLayout="column"
+                                         #mode="matRadioGroup">
+                            <mat-radio-button [checked]="true"
+                                              value="determinate">
+                                Determinate
+                            </mat-radio-button>
+                            <mat-radio-button value="indeterminate">
+                                Indeterminate
+                            </mat-radio-button>
+                        </mat-radio-group>
+                    </section>
+
+                    <section>
+                        <label class="w-25 mr-1">Progress:</label>
+                        <mat-slider [thumbLabel]="true"
+                                    [disabled]="mode.value === 'indeterminate'"
+                                    #progress
+                                    value="35"
+                                    min="0"
+                                    max="100"></mat-slider>
+                    </section>
+
+                    <section>
+                        <label class="w-25 mr-1">Diameter:</label>
+                        <mat-slider [thumbLabel]="true"
+                                    #diameter
+                                    value="90"
+                                    min="0"
+                                    max="200"></mat-slider>
+                    </section>
+
+                    <section>
+                        <label class="w-25 mr-1">Stroke width:</label>
+                        <mat-slider [thumbLabel]="true"
+                                    #strokeWidth
+                                    value="54"
+                                    min="0"
+                                    max="100"></mat-slider>
+                    </section>
+
+                </div>
+
+                <div>
+                    <donut-chart class="mr-5"
+                                 [diameter]="diameter.value"
+                                 [value]="progress.value"
+                                 [mode]="mode.value"
+                                 [strokeWidth]="strokeWidth.value"
+                                 [theme]="theme.value">Click</donut-chart>
+                </div>
+
+            </mat-card-content>
+        </mat-card>
+    </ng-container>
+
+    <ng-container *ngIf="true">
+        <mat-card class="mt-2">
+            <mat-card-header>
+                <mat-card-title class="text-muted">InputFieldComponent</mat-card-title>
+            </mat-card-header>
+            <mat-card-content fxLayout="column"
+                              fxLayoutGap="4px">
+                <section fxLayout="column"
+                         fxLayoutGap="8px">
+                    <label>Theme:</label>
+                    <mat-radio-group class="ml-5"
+                                     fxLayoutGap="4px"
+                                     fxLayout="column"
+                                     #theme="matRadioGroup">
+                        <mat-radio-button [checked]="true"
+                                          value="primary">Primary</mat-radio-button>
+                        <mat-radio-button value="accent">Accent</mat-radio-button>
+                        <mat-radio-button value="warn">Warn</mat-radio-button>
+                    </mat-radio-group>
+                </section>
+
+                <input-field prefixIcon="person_outline"
+                             suffixIcon="help_outline"
+                             hint="Hint"
+                             label="Label"
+                             placeholder="Placeholder"
+                             [theme]="theme.value"></input-field>
+
+            </mat-card-content>
+        </mat-card>
+    </ng-container>
+
+    <ng-container *ngIf="true">
+        <mat-card class="mt-2">
+            <mat-card-header>
+                <mat-card-title class="text-muted">SelectFieldComponent</mat-card-title>
+            </mat-card-header>
+            <mat-card-content fxLayout="column"
+                              fxLayoutGap="4px">
+                <section fxLayout="column"
+                         fxLayoutGap="8px">
+                    <label>Theme:</label>
+                    <mat-radio-group class="ml-5"
+                                     fxLayoutGap="4px"
+                                     fxLayout="column"
+                                     #theme="matRadioGroup">
+                        <mat-radio-button [checked]="true"
+                                          value="primary">Primary</mat-radio-button>
+                        <mat-radio-button value="accent">Accent</mat-radio-button>
+                        <mat-radio-button value="warn">Warn</mat-radio-button>
+                    </mat-radio-group>
+                </section>
+    
+                <select-field prefixIcon="person_outline"
+                             suffixIcon="help_outline"
+                             [items]="[{ icon: 'home', value: 'home' },{ icon: 'help_outline', value: 'help_outline' }]"
+                             hint="Hint"
+                             label="Label"
+                             placeholder="Placeholder"
+                             [theme]="theme.value"></select-field>
+    
+            </mat-card-content>
+        </mat-card>
+    </ng-container>
+
+</div>
 
 <router-outlet></router-outlet>

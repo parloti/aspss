@@ -10,7 +10,7 @@ import { MatFormFieldAppearance } from '@angular/material/form-field';
 })
 export class InputFieldComponent {
   @Input() public appearance: MatFormFieldAppearance = 'outline';
-  @Input() public fieldFormControl: FormControl;
+  @Input() public fieldFormControl: FormControl = new FormControl();
   @Input() public hint: string;
   @Input() public label: string;
   @Input() public placeholder: string;

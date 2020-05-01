@@ -1,9 +1,36 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-import { MatProgressSpinner, MAT_PROGRESS_SPINNER_DEFAULT_OPTIONS_FACTORY } from '@angular/material/progress-spinner';
+import { MatProgressSpinner, MAT_PROGRESS_SPINNER_DEFAULT_OPTIONS, MAT_PROGRESS_SPINNER_DEFAULT_OPTIONS_FACTORY } from '@angular/material/progress-spinner';
 import { By } from '@angular/platform-browser';
 import { NgxAllMatModule } from 'projects/ngx-all-mat/src/public-api';
 import { DonutChartComponent } from './donut-chart.component';
 
+describe('DonutChartComponent without default', () => {
+  let component: DonutChartComponent;
+  let fixture: ComponentFixture<DonutChartComponent>;
+
+  beforeEach(async(() => {
+    TestBed.configureTestingModule({
+      imports: [NgxAllMatModule],
+      declarations: [DonutChartComponent],
+    }).overrideProvider(MAT_PROGRESS_SPINNER_DEFAULT_OPTIONS, {
+      useValue: null
+    }).compileComponents();
+  }));
+
+  beforeEach(() => {
+    fixture = TestBed.createComponent(DonutChartComponent);
+    component = fixture.componentInstance;
+    fixture.detectChanges();
+  });
+
+  it('should create', () => {
+    expect(component).toBeTruthy();
+  });
+
+  it('should ever have diameter>=10', () => {
+    expect(component.diameter).toBe(10);
+  });
+});
 
 describe('DonutChartComponent', () => {
   let component: DonutChartComponent;

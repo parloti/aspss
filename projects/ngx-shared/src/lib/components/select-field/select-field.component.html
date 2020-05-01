@@ -22,7 +22,7 @@
         <mat-icon [color]="optionsTheme"
                   matPrefix
                   [svgIcon]="item.svgIcon">{{item.icon}}</mat-icon>
-        <span> {{ item.value }}</span>
+        <span> {{ item.viewValue || item.value }}</span>
       </div>
     </mat-option>
 

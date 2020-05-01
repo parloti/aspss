@@ -14,9 +14,7 @@ export class CheckboxFieldComponent
   private backgroundElement: HTMLDivElement;
   private borderElement: HTMLDivElement;
   @ViewChild('colorCatcher') private colorCatcher: MatButton;
-  @Input() public fieldFormControl: FormControl = new FormControl({
-    disable: true,
-  });
+  @Input() public fieldFormControl: FormControl = new FormControl();
   @Input() public label: string;
   @ViewChild(MatCheckbox) private matCheckbox: MatCheckbox;
   @Input() public outline = true;

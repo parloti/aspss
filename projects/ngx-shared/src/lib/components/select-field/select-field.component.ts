@@ -12,9 +12,9 @@ import { MatFormFieldAppearance } from '@angular/material/form-field';
 export class SelectFieldComponent implements OnInit {
   constructor() { }
   @Input() public appearance: MatFormFieldAppearance = 'outline';
-  @Input() public fieldFormControl: FormControl;
+  @Input() public fieldFormControl: FormControl = new FormControl();
   @Input() public hint: string;
-  @Input() public items: { icon?: string, svgIcon?: string, value: any; }[];
+  @Input() public items: { icon?: string, svgIcon?: string, value: any, viewValue?: any }[];
   @Input() public label: string;
   @Input() public optionsTheme: ThemePalette = 'primary';
   @Input() public placeholder: string;

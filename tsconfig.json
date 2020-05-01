@@ -11,11 +11,25 @@
     "moduleResolution": "node",
     "importHelpers": true,
     "target": "es2015",
-    "lib": ["es2018", "dom"],
+    "lib": [
+      "es2018",
+      "dom"
+    ],
     "paths": {
-      "@angular/*": ["./node_modules/@angular/*"],
-      "@aspss/ngx-shared": ["dist/ngx-shared/ngx-shared", "dist/ngx-shared"],
-      "@aspss/ngx-all-mat": ["dist/ngx-all-mat/ngx-all-mat", "dist/ngx-all-mat"]
+      "@angular/*": [
+        "./node_modules/@angular/*"
+      ],
+      "@aspss/ngx-shared": [
+        "dist/ngx-shared/ngx-shared",
+        "dist/ngx-shared"
+      ],
+      "@aspss/ngx-all-mat": [
+        "dist/ngx-all-mat/ngx-all-mat",
+        "dist/ngx-all-mat"
+      ],
+      "@aspss/lint": [
+        "projects/lint"
+      ]
     }
   },
   "angularCompilerOptions": {

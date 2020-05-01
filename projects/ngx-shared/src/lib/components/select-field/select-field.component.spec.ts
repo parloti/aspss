@@ -166,6 +166,37 @@ describe('SelectFieldComponent', () => {
     }
   });
 
+
+  it('should sets item value to mat-option.viewValue', () => {
+    component.items = [{ value: 1 }, { value: 2 }, { value: 3 }];
+    fixture.detectChanges();
+
+    const optionDEs = fixture.debugElement.queryAll(By.css('mat-option'));
+    for (let index = 1; index < optionDEs.length; index++) {
+      const optionDE = optionDEs[index];
+      const option = optionDE.nativeElement as HTMLElement;
+
+      expect(option.textContent.trim()).toBe(component.items[index - 1].value.toString());
+    }
+  });
+
+  it('should sets item viewValue to mat-option', () => {
+    component.items = [
+      { value: 10, viewValue: 1 },
+      { value: 20, viewValue: 2 },
+      { value: 20, viewValue: 3 }
+    ];
+    fixture.detectChanges();
+
+    const optionDEs = fixture.debugElement.queryAll(By.css('mat-option'));
+    for (let index = 1; index < optionDEs.length; index++) {
+      const optionDE = optionDEs[index];
+      const option = optionDE.nativeElement as HTMLElement;
+
+      expect(option.textContent.trim()).toBe(component.items[index - 1].viewValue.toString());
+    }
+  });
+
   it('should sets theme to option icons', () => {
     component.items = [{ value: 1 }, { value: 2 }, { value: 3 }];
     fixture.detectChanges();

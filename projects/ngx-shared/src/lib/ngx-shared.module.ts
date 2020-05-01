@@ -5,6 +5,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgxAllMatModule } from '@aspss/ngx-all-mat';
 import { CheckboxFieldComponent, CloseButtonComponent, DonutChartComponent, InputFieldComponent, SelectFieldComponent } from './components';
 import { FormErrorMessagePipe } from './pipes/form-error-message.pipe';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -16,6 +17,7 @@ import { FormErrorMessagePipe } from './pipes/form-error-message.pipe';
     FormErrorMessagePipe,
   ],
   imports: [
+    BrowserAnimationsModule,
     CommonModule,
     FormsModule,
     ReactiveFormsModule,

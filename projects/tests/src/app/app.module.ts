@@ -1,21 +1,24 @@
-import { BrowserModule, DomSanitizer } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
+import { FlexModule } from '@angular/flex-layout';
+import { FormsModule } from '@angular/forms';
+import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { NgxAllMatModule } from 'projects/ngx-all-mat/src/public-api';
+import { NgxSharedModule } from 'projects/ngx-shared/src/public-api';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { NgxSharedModule } from 'projects/ngx-shared/src/public-api';
-import { NgxAllMatModule } from 'projects/ngx-all-mat/src/public-api';
-import { FormsModule } from '@angular/forms';
-import { MatIconRegistry } from '@angular/material/icon';
+
 
 @NgModule({
   declarations: [
     AppComponent
   ],
   imports: [
+    BrowserAnimationsModule,
     NgxSharedModule,
     NgxAllMatModule,
     FormsModule,
+    FlexModule,
     BrowserModule,
     AppRoutingModule
   ],
@@ -23,4 +26,4 @@ import { MatIconRegistry } from '@angular/material/icon';
   bootstrap: [AppComponent]
 })
 export class AppModule {
- }
+}
