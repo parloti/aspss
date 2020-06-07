@@ -95,14 +95,7 @@
     "no-arg": true,
     "no-conflicting-lifecycle": true,
     "no-consecutive-blank-lines": false,
-    "no-console": [
-      true,
-      "debug",
-      "info",
-      "time",
-      "timeEnd",
-      "trace"
-    ],
+    "no-console": false,
     "no-debugger": true,
     "no-duplicate-imports": true,
     "no-duplicate-variable": true,

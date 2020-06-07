@@ -5,7 +5,6 @@ import { InjectionToken, Pipe, PipeTransform } from '@angular/core';
 })
 export class FormErrorMessagePipe implements PipeTransform {
   public transform(errorCode: string, ...args: unknown[]): unknown {
-    debugger;
     return null;
   }
 }
